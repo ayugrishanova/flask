@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Опрос</title>
+</head>
+{% extends "base.html" %}
+{% block content %}
+<body>
+<style>
+    h1 {
+            text-align: center
+         }
+    form {
+            background-color: #fff;
+            max-width: 65%;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    .form-control {
+            text-align: left;
+            margin-bottom: 10%;
+        }
+    .form-control label {
+            margin-right: 2%;
+        }
+    select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            padding: 10px;
+            display: block;
+            width: 95%;
+            margin-bottom: 15%;
+        }
+    button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+    button {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-size: 125%;
+            display: block;
+            width: 100%
+        }
+</style>
+    <h1>{{ text }}</h1>
+
+    <!-- Create Form -->
+
+    <form id="form" action="/survey" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-control">
+            <label for="username" id="label-username">
+                {{ form.username.label }}
+            </label>
+            {{ form.username.data }}
+        </div>
+        <div class="form-control">
+            <label for="age" id="label-age">
+                {{ form.age.label }}
+            </label>
+             {{ form.age.data }}
+        </div>
+        <div class="form-control">
+            <label for="gender" id="label-gender">
+                {{ form.gender.label }}
+            </label>
+             {{ form.gender.data}}
+        </div>
+        <div class="form-control">
+            <label for="role" id="label-role">
+                {{ form.education.label }}
+            </label>
+                {{ form.education.data }}
+        </div>
+        <h1>Что у вас больше всего ассоциируется с данным словом?</h1>
+        <div class="form-control">
+            <label for="q1" id="label-q1">
+                {{ form.q1.label }}
+            </label>
+             {{ form.q1.data }}
+        </div>
+        <div class="form-control">
+            <label for="q2" id="label-q2">
+                {{ form.q2.label }}
+            </label>
+             {{ form.q2.data }}
+        </div>
+        <div class="form-control">
+            <label for="q3" id="label-q3">
+                {{ form.q3.label }}
+            </label>
+             {{ form.q3.data }}
+        </div>
+        <div class="form-control">
+            <label for="q4" id="label-q4">
+                {{ form.q4.label }}
+            </label>
+             {{ form.q4.data }}
+        </div>
+        <div class="form-control">
+            <label for="q5" id="label-q5">
+                {{ form.q5.label }}
+            </label>
+             {{ form.q5.data }}
+        </div>
+        <!-- Multi-line Text Input Control -->
+        {{ form.submit() }}
+    </form>
+    <a href="/"><button>На главную страницу</button></a>
+</body>
+{% endblock %}
+</html>

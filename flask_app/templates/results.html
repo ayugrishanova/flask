@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+</head>
+{% extends "base.html" %}
+{% block content %}
+<body>
+<style>
+    th {
+      padding: 10px;
+      border: 1px solid;
+}
+    td {
+      font-size: 0.8em;
+      padding: 1% 7px;
+      border: 1px solid;
+}
+</style>
+<h1>Статистика по информантам:</h1>
+    <table>
+          <tr>
+              <th>Средний возраст</th>
+              <th>Минимальный возраст</th>
+              <th>Максимальный возраст</th>
+              <th>Число информантов</th>
+          </tr>
+          <tr>
+              <td>{{ all_info['age_mean'] }}</td>
+              <td>{{ all_info['age_min'] }}</td>
+              <td>{{ all_info['age_max'] }}</td>
+              <td>{{ all_info['total_count'] }}</td>
+          </tr>
+    </table>
+<h1>Статистика по опросу:</h1>
+    <table>
+          <tr>
+              <th>Ассоциируется с капибарой</th>
+              <th>Ассоциируется с бабочкой</th>
+              <th>Ассоциируется с жизнью</th>
+              <th>Ассоциируется с лингвистикой</th>
+              <th>Ассоциируется с каникулами</th>
+          </tr>
+          <tr>
+              <td>{{ freq_all['q1'] }}</td>
+              <td>{{ freq_all['q2'] }}</td>
+              <td>{{ freq_all['q3'] }}</td>
+              <td>{{ freq_all['q4'] }}</td>
+              <td>{{ freq_all['q5'] }}</td>
+          </tr>
+    </table>
+    <a href="/"><button>На главную страницу</button></a>
+</body>
+{% endblock %}
+</html>

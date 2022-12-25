@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<title>Анкета</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+
+    <style>
+    h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif;
+          }
+
+
+        body {
+            background-color: #FFCCE5;
+            text-align: center;
+            font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif;
+              color: #001933;
+        }
+        ul.navbar {
+  list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    width: 9em }
+  ul.navbar li {
+    text-align: center;
+    background: #FF99CC;
+    margin: 0.5em 0;
+    padding: 0.3em;
+
+    }
+    ul.navbar a {
+    text-decoration: none;
+     color: #001933;}
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 35%;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif;
+              color: #001933;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #FF99CC;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-size: 125%;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<ul class="navbar">
+  <li><a href="http://127.0.0.1:5000/">Главная страница</a>
+  <li><a href="file:///C:/Users/Ann/PycharmProjects/propg/python_for_nlp_stud/hw5/templates/survey.html">Анкета участника</a>
+  <li><a href="http://127.0.0.1:5000/">Опрос</a>
+  <li><a href="town.html">Статистика</a>
+</ul>
+    <h1>Ответьте честно на следующие опросы:</h1>
+
+    <!-- Create Form -->
+    <form id="form" action="/">
+                <div class="form-control">
+            <label for="age" id="label-age">
+                Возраст
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="number"
+                   id="age"
+                   placeholder="Введите ваш возраст" />
+        </div>
+      <div class="form-control">
+            <label for="gender" id="gender">
+                Ваш гендер
+            </label>
+            <!-- Dropdown options -->
+            <select name="gender" id="gender">
+                <option value="female">женский</option>
+                <option value="male">мужской</option>
+                <option value="other">другой</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label for="education" id="education">
+                Ваше образование
+            </label>
+
+            <!-- Dropdown options -->
+            <select name="education" id="education">
+                <option value="kindergarten">детский сад</option>
+                <option value="school_9">9 классов школы</option>
+                <option value="school_11">11 классов школы</option>
+                <option value="college">среднее специальное</option>
+                <option value="student">неоконченное высшее</option>
+                <option value="bachelor">бакалавриат/специалитет</option>
+                <option value="master">магистратура</option>
+                <option value="phd">аспирантура</option>
+                <option value="candidate">кандидат наук</option>
+                <option value="doctor">доктор наук</option>
+            </select>
+        </div>
+
+        <div class="form-control">
+            <label>Какие языки вы знаете?
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox"
+                       name="inp">Английский</input></label>
+            <label for="inp-3">
+                <input type="checkbox"
+                       name="inp">Русский</input></label>
+            <label for="inp-4">
+                <input type="checkbox"
+                       name="inp">Чувашский</input></label>
+            <label for="inp-5">
+                <input type="checkbox"
+                       name="inp">Татарский</input></label>
+            <label for="inp-6">
+                <input type="checkbox"
+                       name="inp">Французский</input></label>
+          <label for="inp-2">
+                <input type="checkbox"
+                       name="inp">C++</input></label>
+        </div>
+        <div class="form-control">
+            <label for="comment">
+                Ваши комментарии к анкете:
+            </label>
+
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment"
+                placeholder="Ждем от вас коммента">
+            </textarea>
+        </div>
+        <!-- Multi-line Text Input Control -->
+        <input type="submit" value="Сохранить"/>
+    </form>
+    <a href="#"><button>Продолжить прохождение</button></a>
+</body>
+
+</html>
